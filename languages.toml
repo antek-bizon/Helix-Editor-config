@@ -1,0 +1,23 @@
+[[language]]
+name = "rust"
+auto-format = true
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[[language]]
+name = "c"
+auto-format = true
+indent = { tab-width = 2, unit = " " }
+
+[[language]]
+name = "cpp"
+auto-format = true
+indent = { tab-width = 2, unit = " " }
+
+[[language]]
+name = "odin"
+auto-format = true
+indent = { tab-width = 4, unit = " " }
+injection-regex = "odin"
+formatter = { command = "odinfmt", args = [ "-stdin", "true" ] }
