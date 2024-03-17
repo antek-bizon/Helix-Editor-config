@@ -1,9 +1,9 @@
-theme = "sonokai"
+theme = "sonokai_shusia"
 
 [editor]
 auto-save = true
 auto-format = true
-idle-timeout = 200
+idle-timeout = 250
 bufferline = "multiple"
 
 [editor.cursor-shape]
@@ -13,6 +13,9 @@ select = "underline"
 
 [editor.soft-wrap]
 enable = true
+
+[editor.lsp]
+display-messages = true
 
 [keys.normal]
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
