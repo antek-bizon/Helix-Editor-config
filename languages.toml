@@ -6,18 +6,131 @@ auto-format = true
 command = "clippy"
 
 [[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
 name = "c"
 auto-format = true
-indent = { tab-width = 2, unit = " " }
+indent = { tab-width = 4, unit = " " }
 
 [[language]]
 name = "cpp"
 auto-format = true
-indent = { tab-width = 2, unit = " " }
+indent = { tab-width = 4, unit = " " }
 
 [[language]]
 name = "odin"
 auto-format = true
 indent = { tab-width = 4, unit = " " }
 injection-regex = "odin"
-formatter = { command = "odinfmt", args = [ "-stdin", "true" ] }
+formatter = { command = "odinfmt", args = ["-stdin", "true"] }
+
+# --------------------- Web -------------------------
+
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+
+# [language-server.eslint]
+# command = "vscode-eslint-language-server"
+# args = ["--stdio"]
+
+# [language-server.eslint.config]
+# codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+# format = { enable = true }
+# nodePath = ""
+# quiet = false
+# rulesCustomizations = []
+# run = "onType"
+# validate = "on"
+# experimental = {}
+# problems = { shortenToSingleLine = false }
+
+# [language-server.eslint.config.codeAction]
+# disableRuleComment = { enable = true, location = "separateLine" }
+# showDocumentation = { enable = false }
+
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
+[[language]]
+name = "javascript"
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
+auto-format = true
+formatter = { command = "biome", args = [
+  "format",
+  "--stdin-file-path",
+  "a.js",
+] }
+
+[[language]]
+name = "typescript"
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
+auto-format = true
+formatter = { command = "biome", args = [
+  "format",
+  "--stdin-file-path",
+  "a.ts",
+] }
+
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
+formatter = { command = "biome", args = [
+  "format",
+  "--stdin-file-path",
+  "a.tsx",
+] }
+
+[[language]]
+name = "jsx"
+auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
+formatter = { command = "biome", args = [
+  "format",
+  "--stdin-file-path",
+  "a.jsx",
+] }
+
+[[language]]
+name = "json"
+language-servers = [
+  { name = "vscode-json-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
+formatter = { command = "biome", args = [
+  "format",
+  "--stdin-file-path",
+  "a.json",
+] }
