@@ -20,13 +20,6 @@ name = "cpp"
 auto-format = true
 indent = { tab-width = 4, unit = " " }
 
-[[language]]
-name = "odin"
-auto-format = true
-indent = { tab-width = 4, unit = " " }
-injection-regex = "odin"
-formatter = { command = "odinfmt", args = ["-stdin", "true"] }
-
 # --------------------- Web -------------------------
 
 [language-server]
