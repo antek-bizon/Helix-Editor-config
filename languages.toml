@@ -1,6 +1,5 @@
 [[language]]
 name = "rust"
-auto-format = true
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
@@ -8,21 +7,17 @@ command = "clippy"
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
-auto-format = true
 
 [[language]]
 name = "c"
-auto-format = true
 indent = { tab-width = 4, unit = " " }
 
 [[language]]
 name = "cpp"
-auto-format = true
 indent = { tab-width = 4, unit = " " }
 
 [[language]]
 name = "odin"
-auto-format = false
 
 [[language]]
 name = "python"
@@ -78,7 +73,6 @@ language-servers = [
   ] },
   "biome",
 ]
-auto-format = true
 formatter = { command = "biome", args = [
   "format",
   "--stdin-file-path",
@@ -93,7 +87,6 @@ language-servers = [
   ] },
   "biome",
 ]
-auto-format = true
 formatter = { command = "biome", args = [
   "format",
   "--stdin-file-path",
@@ -102,7 +95,6 @@ formatter = { command = "biome", args = [
 
 [[language]]
 name = "tsx"
-auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [
     "format",
@@ -117,7 +109,6 @@ formatter = { command = "biome", args = [
 
 [[language]]
 name = "jsx"
-auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [
     "format",
