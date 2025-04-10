@@ -11,10 +11,12 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 [[language]]
 name = "c"
 indent = { tab-width = 4, unit = " " }
+formatter = { command = "clang-format", args = ["--style=WebKit"]}
 
 [[language]]
 name = "cpp"
 indent = { tab-width = 4, unit = " " }
+formatter = { command = "clang-format", args = ["--style=WebKit"]}
 
 [[language]]
 name = "odin"
