@@ -2,7 +2,7 @@ theme = "gruvbox_dark_soft"
 
 [editor]
 auto-save = true
-auto-format = true
+auto-format = false
 idle-timeout = 250
 bufferline = "multiple"
 line-number = "relative"

@@ -18,19 +18,9 @@ name = "cpp"
 indent = { tab-width = 4, unit = " " }
 formatter = { command = "clang-format", args = ["--style=Chromium"]}
 
-[[grammar]]
-name = "odin"
-source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-odin", rev = "e8adc739b78409a99f8c31313f0bb54cc538cf73" }
-
 [[language]]
 name = "python"
-language-servers = ["pyright", "ruff"]
-
-[language-server.ruff]
-command = "ruff"
-args = ["server"]
-
-# --------------------- Web -------------------------
+language-servers = ["pyright", "ruff", "ty", "jedi", "pylsp"]
 
 [language-server]
 biome = { command = "biome", args = ["lsp-proxy"] }
